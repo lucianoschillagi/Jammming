@@ -1,7 +1,8 @@
-// App Component
+/* App Component */
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+// TODO: import SearchBar, SearchResults and Playlist components
 
 class App extends Component {
   render() {

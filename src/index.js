@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './App/App.css';
-import './App/App.js';
-import App from './App';
+import './Components/App/App.css';
+//import './Components/App/App.js';
+import App from './Components/App/App.js';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -11,3 +11,11 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+/*
+Failed to compile
+./src/index.js
+Module not found: Can't resolve './App' in '/Users/ls/Documents/Dev/projects/jammmming/src'
+
+*/
