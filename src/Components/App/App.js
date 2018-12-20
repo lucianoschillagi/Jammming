@@ -5,6 +5,35 @@ import './App.css';
 // TODO: import SearchBar, SearchResults and Playlist components
 
 class App extends Component {
+
+  // constructor method
+  constructor(props) {
+    // construye este componente (App) heredando las propiedades de su padre (React.Component)
+    super(props);
+    // establece el estado inicial del componente
+    this.state.searchResults = [
+      trackOne = {
+        name: 'Jump',
+        artist: 'Madonna',
+        album: 'XXX',
+        id: '1'
+       },
+      trackTwo = {
+        name: 'Every Day',
+        artist: 'Madonna',
+        album: 'XXX',
+        id: '2'
+      },
+      trackThree = {
+        name: 'Otro',
+        artist: 'Madonna',
+        album: 'XXX',
+        id: '3'
+      },
+    ]
+  }
+
+  // render method
   render() {
     return (
       <div>

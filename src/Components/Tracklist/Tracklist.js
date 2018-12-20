@@ -1,9 +1,9 @@
 /* Tracklist Component */
-import React, { Component } from 'react';
+import React from 'react';
 import './Tracklist.css';
 // TODO: import Track component
 
-class Tracklist extends Component {
+class Tracklist extends React.Component {
   render() {
     return (
       <div className="TrackList">
