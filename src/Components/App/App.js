@@ -12,18 +12,21 @@ class App extends Component {
     super(props);
     // establece el estado inicial del componente
     this.state.searchResults = [
+      // a JSON
       trackOne = {
         name: 'Jump',
         artist: 'Madonna',
         album: 'XXX',
         id: '1'
        },
+       // another JSON
       trackTwo = {
         name: 'Every Day',
         artist: 'Madonna',
         album: 'XXX',
         id: '2'
       },
+      // another JSON...
       trackThree = {
         name: 'Otro',
         artist: 'Madonna',
@@ -36,6 +39,7 @@ class App extends Component {
   // render method
   render() {
     return (
+      // start JSX
       <div>
         <h1>Ja<span class="highlight">mmm</span>ing</h1>
         <div className="App">
@@ -46,6 +50,7 @@ class App extends Component {
           </div>
         </div>
     </div>
+    // end JSX
     );
   }
 }
