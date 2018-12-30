@@ -1,7 +1,7 @@
 /* Tracklist Component */
 import React from 'react';
 import './Tracklist.css';
-// TODO: import Track component
+import Track from '../Track/Track';
 
 /*
 In the TrackList component, use the .map() method to render each t
@@ -20,7 +20,24 @@ class Tracklist extends React.Component {
   render() {
     return (
       <div className="TrackList">
-      { /* You will add a map method that renders a set of Track components */}
+      { /* You will add a map method that renders a set of Track components 
+      
+      REFERENCE:
+      <div className="BusinessList">
+        {
+          this.props.businesses.map(business => {
+            return <Business key={business.id} business={business} />
+          })
+        }
+      </div>
+      
+      */}
+      {
+        this.props.tracks.map(tracks => {
+          return <Track key={track.id} track={track} />
+        })
+
+      }
       </div>
     );
   }

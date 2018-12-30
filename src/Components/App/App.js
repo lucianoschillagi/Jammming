@@ -4,9 +4,9 @@ import logo from './logo.svg';
 import './App.css';
 
 // import components
-import SearchBar from './SearchBar/SearchBar';
-import SearchResults from './SearchResults/SearchResults';
-import Playlist from './Playlist/Playlist';
+import SearchBar from '../SearchBar/SearchBar';
+import SearchResults from '../SearchResults/SearchResults';
+import Playlist from '../Playlist/Playlist';
 
 class App extends React.Component {
 

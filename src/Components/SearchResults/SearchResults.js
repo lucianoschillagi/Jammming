@@ -2,7 +2,7 @@
 import React from 'react';
 import './SearchResults.css';
 // import Track List
-import TrackList from './TrackList/TrackList';
+import TrackList from '../TrackList/TrackList';
 
 class SearchResults extends React.Component {
   render() {
@@ -17,3 +17,16 @@ class SearchResults extends React.Component {
 }
 
 export default SearchResults;
+
+
+/*
+35.
+Render the track name, artist, and album.
+
+Use the following property calls to access the track's name, artist, and album:
+
+this.props.track.name
+this.props.track.artist
+this.props.track.album
+
+*/
