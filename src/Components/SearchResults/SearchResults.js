@@ -1,14 +1,19 @@
 /* Search Results Component */
-import React, { Component } from 'react';
+import React from 'react';
 import './SearchResults.css';
-//TODO: import TrackList component
+import TrackList from './TrackList/TrackList';
 
-class SearchResults extends Component {
+/*
+Inside the SearchResults.js .render() method, pass this.props.searchResults as 
+an attribute called tracks in the TrackList component.
+*/
+
+class SearchResults extends React.Component {
   render() {
     return (
-      <div className="SearchResults">
+      <div className="SearchResults" searchResults={this.state.searchResults}>
         <h2>Results</h2>
-        {/* Add a TrackList component  */}
+        <TrackList tracks={this.props.searchResults}/>
       </div>
     );
   }

@@ -1,39 +1,44 @@
 /* App Component */
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-// TODO: import SearchBar, SearchResults and Playlist components
 
-class App extends Component {
+// import components
+import SearchBar from './SearchBar/SearchBar';
+import SearchResults from './SearchResults/SearchResults';
+import Playlist from './Playlist/Playlist';
 
-  // constructor method
+class App extends React.Component {
+
   constructor(props) {
-    // construye este componente (App) heredando las propiedades de su padre (React.Component)
     super(props);
     // establece el estado inicial del componente
-    this.state.searchResults = [
-      // a JSON
-      trackOne = {
-        name: 'Jump',
-        artist: 'Madonna',
-        album: 'XXX',
-        id: '1'
-       },
-       // another JSON
-      trackTwo = {
-        name: 'Every Day',
-        artist: 'Madonna',
-        album: 'XXX',
-        id: '2'
-      },
-      // another JSON...
-      trackThree = {
-        name: 'Otro',
-        artist: 'Madonna',
-        album: 'XXX',
-        id: '3'
-      },
-    ]
+    // un conjunto de tracks (por ahora ficticios)
+    this.state = {
+      searchResults : [
+        {
+          name: 'Jump',
+          artist: 'Madonna',
+          album: 'XXX',
+          id: '1'
+         },
+         // another JSON
+        {
+          name: 'Every Day',
+          artist: 'Madonna',
+          album: 'XXX',
+          id: '2'
+        },
+        // another JSON...
+         {
+          name: 'Otro',
+          artist: 'Madonna',
+          album: 'XXX',
+          id: '3'
+        }
+      ]
+    } 
+      
   }
 
   // render method
