@@ -8,17 +8,6 @@ import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
 
-
-/*
-37.
-Add hard-coded values for playlistName and playlistTracks to state in App.js.
-
-You can set playlistName to any string.
-
-The playlistTracks value should be an array of objects, 
-each containing name, artist, album, and id properties.
-*/
-
 class App extends React.Component {
 
   // este componente (App) hereda todas las propiedades
@@ -78,6 +67,15 @@ class App extends React.Component {
       
   }
 
+  /*
+  38.
+  Pass the playlist name and tracks from the App component to the Playlist component.
+
+  Inside the App.js .render() method, pass this.state.playlistName and 
+  this.state.playlistTracks as attributes called playlistName and playlistTracks 
+  in the Playlist component.
+  */
+
   // render method
   render() {
     return (
@@ -90,6 +88,7 @@ class App extends React.Component {
           { /*  Add a SearchResults component  */}
     
           { /*  Add a Playlist component  */}
+          <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}/>
           </div>
         </div>
     </div>
