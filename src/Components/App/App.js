@@ -8,13 +8,22 @@ import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
 
+/*
+
+
+*/
+
 class App extends React.Component {
 
+  // este componente (App) hereda todas las propiedades
+  // de su super clase (React.Component)
   constructor(props) {
     super(props);
     // establece el estado inicial del componente
     // un conjunto de tracks (por ahora ficticios)
     this.state = {
+      // search results representa una serie de tracks (ficticios)
+      // obtenidos mediante una búsqueda realizada por el usuario
       searchResults : [
         {
           name: 'Jump',
@@ -51,6 +60,7 @@ class App extends React.Component {
           { /*  Add a SearchBar component  */}
           <div className="App-playlist">
           { /*  Add a SearchResults component  */}
+    
           { /*  Add a Playlist component  */}
           </div>
         </div>

@@ -18,21 +18,21 @@ Export the Track component.
 class Track extends React.Component {
 
   renderAction() {
-    if (isRemoval) {
+    /*if (isRemoval) {
       // TODO: displays - anchor tag
       return <a>-</a>
     } else {
       // TODO: displays + anchor tag
       return <a>+</a>
-    }
+    }*/
   }
 
   render() {
     return (
       <div className="Track">
         <div className="Track-information">
-          <h3>{ /* track name will go here  */}</h3>
-          <p>{ /* track artist will go here | track album will go here  */}</p>
+          <h3>{this.props.track.name}</h3>
+          <p>{`${this.props.track.artist} ${this.props.track.album}`}</p>
         </div>
         <a className="Track-action">{ /* + or - will go here */}</a>
       </div>

@@ -4,12 +4,20 @@ import './SearchResults.css';
 // import Track List
 import TrackList from '../TrackList/TrackList';
 
+/*
+
+
+*/
+
 class SearchResults extends React.Component {
   render() {
     return (
-      <div className="SearchResults" searchResults={this.state.searchResults}>
+      // le pasa el estado del componente App al componente SearchResults
+      // como un atributo llamadado 'searchResults'
+      <div className="SearchResults" searchResults={this.props.searchResults}>
         <h2>Results</h2>
-        {/* pasa 'search results' a 'track list'*/}
+        {/* pasa los resultados de la búsqueda (el array de 
+        tracks) a través del atributo ´tracks´ del componente TrackList*/}
         <TrackList tracks={this.props.searchResults}/>
       </div>
     );
@@ -17,16 +25,3 @@ class SearchResults extends React.Component {
 }
 
 export default SearchResults;
-
-
-/*
-35.
-Render the track name, artist, and album.
-
-Use the following property calls to access the track's name, artist, and album:
-
-this.props.track.name
-this.props.track.artist
-this.props.track.album
-
-*/
