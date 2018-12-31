@@ -8,9 +8,15 @@ import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
 
+
 /*
+37.
+Add hard-coded values for playlistName and playlistTracks to state in App.js.
 
+You can set playlistName to any string.
 
+The playlistTracks value should be an array of objects, 
+each containing name, artist, album, and id properties.
 */
 
 class App extends React.Component {
@@ -31,17 +37,39 @@ class App extends React.Component {
           album: 'XXX',
           id: '1'
          },
-         // another JSON
         {
           name: 'Every Day',
           artist: 'Madonna',
           album: 'XXX',
           id: '2'
         },
-        // another JSON...
          {
           name: 'Otro',
           artist: 'Madonna',
+          album: 'XXX',
+          id: '3'
+        }
+      ],
+      // play list name
+      playListName: 'Mi Lista de reproducción',
+
+      // play list tracks
+      playListTracks: [
+        {
+          name: 'Pedro',
+          artist: 'Nick Drake',
+          album: 'XXX',
+          id: '1'
+         },
+        {
+          name: 'La cucaracha',
+          artist: 'Babasónicos',
+          album: 'XXX',
+          id: '2'
+        },
+         {
+          name: 'La maza',
+          artist: 'Silvio',
           album: 'XXX',
           id: '3'
         }
