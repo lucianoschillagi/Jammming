@@ -64,17 +64,34 @@ class App extends React.Component {
         }
       ]
     } 
+
+    // bind methods
+    this.addTrack = this.addTrack.bind(this);
       
   }
 
   /*
-  38.
-  Pass the playlist name and tracks from the App component to the Playlist component.
+  41.
+  In App.js create a method called addTrack with the following functionality:
 
-  Inside the App.js .render() method, pass this.state.playlistName and 
-  this.state.playlistTracks as attributes called playlistName and playlistTracks 
-  in the Playlist component.
+  Accepts a track argument
+  Use the track's id property to check if the current song is in the playlistTracks state.
+  If the id is new, add the song to the end of the playlist.
+  Set the new state of the playlist
   */
+
+  // task: agregar una canción del Search Results al Play List. Comprobar si la canción que
+  // se quiere agregar ya está guardada en el play list.
+  addTrack(track) {
+
+    // comprueba si la canción que se quiere agregar ya está guardada en el playlist
+    if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+      // entonces, si ya está guardada, no agregar nada 
+      return;
+    } else {
+      // pero si NO estaba guardada en el playlist, AGREGAR al playlist
+    }
+  }
 
   // render method
   render() {
