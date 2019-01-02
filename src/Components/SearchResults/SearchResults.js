@@ -18,7 +18,8 @@ class SearchResults extends React.Component {
         <h2>Results</h2>
         {/* pasa los resultados de la búsqueda (el array de 
         tracks) a través del atributo ´tracks´ del componente TrackList*/}
-        <TrackList tracks={this.props.searchResults}/>
+        {/* también le pasa el método ´onAdd´*/}
+        <TrackList tracks={this.props.searchResults} onAdd={this.props.onAdd}/>
       </div>
     );
   }
