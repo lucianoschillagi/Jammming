@@ -65,14 +65,6 @@ class App extends React.Component {
       ]
     } 
 
-    /*
-  In the App constructor method, bind the current value of this to .removeTrack().
-
-  Pass .removeTrack() to the Playlist component as an onRemove attribute.
-
-
-
-    */
     // bind methods
     this.addTrack = this.addTrack.bind(this); 
     this.removeTrack = this.addTrack.bind(this);

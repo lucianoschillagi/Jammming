@@ -21,10 +21,3 @@ class TrackList extends React.Component {
 
 export default TrackList;
 
-/*
-Pass onAdd from the TrackList component to the Track component.
-
-Inside the TrackList.js .render() method, pass this.props.onAdd 
-as an attribute called onAdd to the Track component.
-
-*/

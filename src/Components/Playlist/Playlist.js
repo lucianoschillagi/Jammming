@@ -4,6 +4,14 @@ import './Playlist.css';
 // import TrackList component
 import TrackList from '../TrackList/TrackList';
 
+/*
+Pass onRemove from the Playlist component to the TrackList component.
+
+Pass isRemoval with a value of true down to TrackList.
+
+Inside the Playlist.js .render() method, pass this.props.onRemove as an attribute called onRemove in the TrackList component.
+*/
+
 class Playlist extends Component {
   render() {
     return (
