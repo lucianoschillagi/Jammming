@@ -16,13 +16,13 @@ class Playlist extends Component {
     this.handleNameChange = this.handleNameChange(this);
   }
 
+  // task: manejar el cambio de nombre del playlist
   handleNameChange(event) {
     // WARNING: pedir ayuda (59)
   }
 
   render() {
     return (
-      
       <div className="Playlist" 
            onNameChange={this.props.updatePlaylistName} 
            onChange={this.handleNameChange} 

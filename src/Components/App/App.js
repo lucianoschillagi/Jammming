@@ -102,8 +102,6 @@ class App extends React.Component {
     this.state.playListName = name;
   }
 
-
-
   // task: guardar el playlist  
   savePlaylist() {
   /*
@@ -114,6 +112,22 @@ class App extends React.Component {
   In a later step, you will pass the trackURIs array and playlistName to a method that will save the user's playlist to their account.
   */
   }
+
+  search(term) {
+    console.log(term);
+      /*
+  67- In App.js create a method called search with the following functionality:
+
+  Accepts a search term
+  Logs the term to the console
+  In a later assessment, we will hook this method up to the Spotify API.
+  */
+  }
+
+
+
+
+
 
   // render method
   render() {
