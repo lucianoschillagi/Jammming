@@ -5,12 +5,24 @@ import './Playlist.css';
 import TrackList from '../TrackList/TrackList';
 
 /*
-In the App constructor method, bind this to .updatePlaylistName().
+Add a constructor to the Playlist component. Call super(props) in the constructor method.
 
-Pass updatePlaylistName to the Playlist component as an attribute named onNameChange.
+Bind the current value of this to .handleNameChange().
 */
 
 class Playlist extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.handleNameChange = this.handleNameChange(this);
+  }
+
+  
+  handleNameChange(event) {
+    // WARNING: pedir ayuda (59)
+  }
+
   render() {
     return (
       
