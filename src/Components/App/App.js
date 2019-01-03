@@ -43,7 +43,7 @@ class App extends React.Component {
       playListName: 'Mi Lista de reproducción',
 
       // play list tracks
-      playListTracks: [
+      playlistTracks: [
         {
           name: 'Pedro',
           artist: 'Nick Drake',
@@ -78,6 +78,7 @@ class App extends React.Component {
       return;
     } else {
       // pero si NO estaba guardada en el playlist, AGREGAR al playlist
+      // WARNING: incompleto, PEDIR AYUDA
     }
   }
    
@@ -88,7 +89,7 @@ class App extends React.Component {
       // entonces, si ya está guardada, no agregar nada 
       return;
     } else {
-      // pero si NO estaba guardada en el playlist, AGREGAR al playlist
+      // WARNING: incompleto, PEDIR AYUDA
     }
   }
 
@@ -102,7 +103,7 @@ class App extends React.Component {
           { /*  Add a SearchBar component  */}
           <div className="App-playlist">
           { /*  Add a SearchResults component  */}
-    
+          
           { /*  Add a Playlist component  */}
           <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}/>
           </div>
