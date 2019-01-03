@@ -95,6 +95,11 @@ class App extends React.Component {
     }
   }
 
+  // task: actualizar el nombre de la playlist
+  updatePlaylistName(name) {
+    this.state.playListName = name;
+  }
+
   // render method
   render() {
     return (
