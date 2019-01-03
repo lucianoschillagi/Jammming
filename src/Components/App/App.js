@@ -68,6 +68,7 @@ class App extends React.Component {
     // bind methods
     this.addTrack = this.addTrack.bind(this); 
     this.removeTrack = this.addTrack.bind(this);
+    this.updatePlaylistName = this.updatePlaylistName(this);
   }
 
   // task: agregar una canción del Search Results al Play List. Comprobar si la canción que
