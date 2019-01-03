@@ -5,18 +5,16 @@ import './Playlist.css';
 import TrackList from '../TrackList/TrackList';
 
 /*
-Pass onRemove from the Playlist component to the TrackList component.
+In the App constructor method, bind this to .updatePlaylistName().
 
-Pass isRemoval with a value of true down to TrackList.
-
-Inside the Playlist.js .render() method, pass this.props.onRemove as an attribute called onRemove in the TrackList component.
+Pass updatePlaylistName to the Playlist component as an attribute named onNameChange.
 */
 
 class Playlist extends Component {
   render() {
     return (
       
-      <div className="Playlist">
+      <div className="Playlist" onNameChange={this.props.updatePlaylistName}>
         {/* el nombre del playlist */}
         <input value="New Playlist"/>
 
