@@ -68,7 +68,8 @@ class App extends React.Component {
     // bind methods
     this.addTrack = this.addTrack.bind(this); 
     this.removeTrack = this.addTrack.bind(this);
-    this.updatePlaylistName = this.updatePlaylistName(this);
+    this.updatePlaylistName = this.updatePlaylistName.bind(this);
+    this.savePlaylist = this.savePlaylist.bind(this);
   }
 
   // task: agregar una canción del Search Results al Play List. Comprobar si la canción que
@@ -99,6 +100,19 @@ class App extends React.Component {
   // task: actualizar el nombre de la playlist
   updatePlaylistName(name) {
     this.state.playListName = name;
+  }
+
+
+
+  // task: guardar el playlist  
+  savePlaylist() {
+  /*
+  TODO:
+  In App.js create a method called savePlaylist with the following functionality:
+
+  Generates an array of uri values called trackURIs from the playlistTracks property.
+  In a later step, you will pass the trackURIs array and playlistName to a method that will save the user's playlist to their account.
+  */
   }
 
   // render method

@@ -5,20 +5,18 @@ import './Playlist.css';
 import TrackList from '../TrackList/TrackList';
 
 /*
-Add a constructor to the Playlist component. Call super(props) in the constructor method.
 
-Bind the current value of this to .handleNameChange().
+61- In the Playlist render method, pass .handleNameChange() to an onChange property.
 */
 
 class Playlist extends Component {
 
   constructor(props) {
     super(props);
-
     this.handleNameChange = this.handleNameChange(this);
   }
 
-  
+
   handleNameChange(event) {
     // WARNING: pedir ayuda (59)
   }
@@ -26,7 +24,7 @@ class Playlist extends Component {
   render() {
     return (
       
-      <div className="Playlist" onNameChange={this.props.updatePlaylistName}>
+      <div className="Playlist" onNameChange={this.props.updatePlaylistName} onChange={this.handleNameChange}>
         {/* el nombre del playlist */}
         <input value="New Playlist"/>
 
