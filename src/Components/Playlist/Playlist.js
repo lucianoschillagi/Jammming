@@ -21,10 +21,15 @@ class Playlist extends Component {
     // WARNING: pedir ayuda (59)
   }
 
+  // Pass savePlaylist to the Playlist component as an attribute called onSave.
+
   render() {
     return (
       
-      <div className="Playlist" onNameChange={this.props.updatePlaylistName} onChange={this.handleNameChange}>
+      <div className="Playlist" 
+           onNameChange={this.props.updatePlaylistName} 
+           onChange={this.handleNameChange} 
+           onSave={this.props.savePlaylist}>
         {/* el nombre del playlist */}
         <input value="New Playlist"/>
 
