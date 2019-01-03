@@ -6,7 +6,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="SearchBar">
-        <input placeholder="Enter A Song, Album, or Artist" />
+        <input placeholder="Enter A Song, Album, or Artist" onSearch={this.props.search} />
         <a>SEARCH</a>
       </div>
     );
