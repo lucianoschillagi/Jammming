@@ -16,12 +16,9 @@ class Playlist extends Component {
     this.handleNameChange = this.handleNameChange(this);
   }
 
-
   handleNameChange(event) {
     // WARNING: pedir ayuda (59)
   }
-
-  // Pass savePlaylist to the Playlist component as an attribute called onSave.
 
   render() {
     return (
@@ -38,7 +35,7 @@ class Playlist extends Component {
         <TrackList tracks={this.props.playlistTracks} onRemove={this.props.removeTrack}/>
 
         {/* el botón para guardar el play list actual */}
-        <a className="Playlist-save">SAVE TO SPOTIFY</a>
+        <a className="Playlist-save" onClick={this.props.onSave}>SAVE TO SPOTIFY</a>
     </div>
     );
   }
