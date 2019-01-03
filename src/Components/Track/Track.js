@@ -2,12 +2,6 @@
 import React from 'react';
 import './Track.css';
 
-/*
-Add a constructor to the Track component. Call super(props) in the constructor method.
-
-Bind this.addTrack() to the current value of this in the constructor method.
-*/
-
 class Track extends React.Component {
 
   constructor(props) {
@@ -28,7 +22,9 @@ class Track extends React.Component {
   }
 
   // task: agregar un track al playlist
-  addTrack() {
+  addTrack(track) {
+
+    // WARNING: incompleto!
 
   }
 
@@ -39,7 +35,7 @@ class Track extends React.Component {
           <h3>{this.props.track.name}</h3>
           <p>{`${this.props.track.artist} ${this.props.track.album}`}</p>
         </div>
-        <a className="Track-action">{ /* + or - will go here */}</a>
+        <a className="Track-action" onClick={this.addTrack}>+</a>
       </div>
     );
   }
@@ -47,11 +43,4 @@ class Track extends React.Component {
 
 export default Track;
 
-/*
-Create an .addTrack() method in the Track component. 
-Use it to add this.props.track to the playlist.
 
-Pass this.props.track to this.props.onAdd.
-
-
-*/

@@ -3,7 +3,7 @@ import React from 'react';
 import './TrackList.css';
 import Track from '../Track/Track';
 
-class Tracklist extends React.Component {
+class TrackList extends React.Component {
   render() {
     return (
       <div className="TrackList">
@@ -15,12 +15,11 @@ class Tracklist extends React.Component {
         }) 
       }
       </div>
-      
     );
   }
 }
 
-export default Tracklist;
+export default TrackList;
 
 /*
 Pass onAdd from the TrackList component to the Track component.

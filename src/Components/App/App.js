@@ -64,10 +64,8 @@ class App extends React.Component {
         }
       ]
     } 
-
     // bind methods
-    this.addTrack = this.addTrack.bind(this);
-      
+    this.addTrack = this.addTrack.bind(this); 
   }
 
   // task: agregar una canción del Search Results al Play List. Comprobar si la canción que
@@ -75,6 +73,17 @@ class App extends React.Component {
   addTrack(track) {
 
     // comprueba si la canción que se quiere agregar ya está guardada en el playlist
+    if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+      // entonces, si ya está guardada, no agregar nada 
+      return;
+    } else {
+      // pero si NO estaba guardada en el playlist, AGREGAR al playlist
+    }
+  }
+   
+  // task: eliminar una canción de un track list
+  removeTrack(track) {
+    // comprueba si la canción que se quiere eliminar ya está guardada en el playlist
     if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
       // entonces, si ya está guardada, no agregar nada 
       return;
