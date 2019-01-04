@@ -3,7 +3,20 @@
 // This object will store the functionality needed to interact with the SPOTIFY API.
 const Spotify = {
   
-  token: {}
+  token: {},
+
+  // get access token
+  // task: obtener el token de acceso a la API
+  getAccessToken(token) {
+
+    if (token == true) {
+      return token
+    }
+
+  }
+
+
+
 
 };
 
