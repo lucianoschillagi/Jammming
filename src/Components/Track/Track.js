@@ -28,6 +28,7 @@ class Track extends React.Component {
 
   }
 
+  // task: eliminar un track particular
   removeTrack() {
 
   }
@@ -40,18 +41,12 @@ class Track extends React.Component {
           <p>{`${this.props.track.artist} | ${this.props.track.album}`}</p>
         </div>
         <a className="Track-action" onClick={this.addTrack}>+</a>
+
+        {/* REVISAR: esta línea está bien? */}
+        <a className="Track-action" onClick={this.removeTrack}>-</a>
       </div>
     );
   }
 }
 
 export default Track;
-
-/*
-Okay, no worries. Just to let you know for future reference, you can get a lot out of these sessions if you come with some concrete questions about the concepts you're having trouble with in a general sense. I would love to help you with those so that you can hopefully come away with a broader understanding of how to approach the project :)
-Darc profile
-For now though, it looks like our time is coming to an end. But for the last step that you mentioned, you would just need to add an onClick event handler and set it equal to {this.removeTrack} 
-
-
-*/
-
