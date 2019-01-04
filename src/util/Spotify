@@ -3,6 +3,9 @@
 // This object will store the functionality needed to interact with the SPOTIFY API.
 const Spotify = {
   
+
+
+
   token: {},
 
   // get access token
@@ -13,10 +16,16 @@ const Spotify = {
       return token
     }
 
+  },
+
+  // task: realizar una búsqueda de acuerdo al término ingresado por el usuario
+  search(term) {
+      /*
+      WARNING: INCOMPLETO
+      In the Spotify object, add a method called search that accepts a parameter for the user's search term.
+      .search() returns a promise that will eventually resolve to the list of tracks from the search.
+      */
   }
-
-
-
 
 };
 
