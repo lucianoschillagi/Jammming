@@ -22,10 +22,9 @@ class Track extends React.Component {
     }*/
   }
 
-  // task: agregar un track al playlist
+  // task: agregar un track al playlist cuando el usuario tapea el +
   addTrack(track) {
 
-    // WARNING: incompleto!
 
   }
 

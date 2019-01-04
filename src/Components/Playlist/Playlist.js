@@ -24,7 +24,8 @@ class Playlist extends Component {
   render() {
     return (
       <div className="Playlist" 
-           onNameChange={this.props.updatePlaylistName} 
+           onNameChange={this.props.updatePlaylistName}
+           onRemove={this.props.removeTrack} 
            onChange={this.handleNameChange} 
            onSave={this.props.savePlaylist}>
         {/* el nombre del playlist */}
