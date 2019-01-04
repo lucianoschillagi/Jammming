@@ -10,13 +10,24 @@ class SearchBar extends Component {
   }
 
   // search method
+  // task: realizar la búsqueda de acuerdo al término introducido
   search() {
     /*
     In SearchBar.js, create a method called search that passes the state of the term to this.props.onSearch.
     */
   }
 
+  // handle term change
+  // task: manejar el término ingresado por el usuario en la barra de búsqueda
+  handleTermChange(event) {
+    /*
+    71.
+    In SearchBar.js create a method called handleTermChange with the following functionality:
 
+    Accepts an event argument
+    Sets the state of the search bar's term to the event target's value.
+    */
+  }
 
   render() {
     return (
