@@ -90,7 +90,7 @@ class App extends React.Component {
     }
   }
    
-  // task: eliminar una canción de un track list
+  // task: eliminar una canción del track list del playlist
   removeTrack(track) {
     // comprueba si la canción que se quiere eliminar ya está guardada en el playlist
     if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
@@ -98,6 +98,7 @@ class App extends React.Component {
       return;
     } else {
       // WARNING: incompleto, PEDIR AYUDA
+      return track
     }
   }
 
