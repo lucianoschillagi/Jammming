@@ -1,1 +1,8 @@
-lkjlk
+/* SPOTIFY API - Networking */
+
+// This object will store the functionality needed to interact with the SPOTIFY API.
+const Spotify = {
+  
+};
+
+export default Spotify;
