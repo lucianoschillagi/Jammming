@@ -3,9 +3,6 @@
 // This object will store the functionality needed to interact with the SPOTIFY API.
 const Spotify = {
   
-
-
-
   token: {},
 
   // get access token
@@ -25,6 +22,13 @@ const Spotify = {
       In the Spotify object, add a method called search that accepts a parameter for the user's search term.
       .search() returns a promise that will eventually resolve to the list of tracks from the search.
       */
+
+      return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, 
+      
+        {
+          headers: {Authorization: `Bearer ${accessToken}`}
+        }
+      )
   }
 
 };
