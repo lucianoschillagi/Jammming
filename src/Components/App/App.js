@@ -10,12 +10,6 @@ import Playlist from '../Playlist/Playlist';
 
 class App extends React.Component {
 
-  /*
-  In the App constructor method, bind this to .search(). In a later assessment, we will use this in .search().
-
-  Pass .search() to the SearchBar component as an onSearch attribute.
-  */
-
   // este componente (App) hereda todas las propiedades
   // de su super clase (React.Component)
   constructor(props) {
@@ -90,6 +84,9 @@ class App extends React.Component {
     } else {
       // pero si NO estaba guardada en el playlist, AGREGAR al playlist
       // WARNING: incompleto, PEDIR AYUDA
+
+      // si no estaba guardada devolver ese track
+      return track
     }
   }
    
