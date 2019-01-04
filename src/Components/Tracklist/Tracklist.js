@@ -12,8 +12,7 @@ class TrackList extends React.Component {
       {
          this.props.tracks.map(track => {      
          {/* devuelve un NUEVO array,
-          en este caso un array de [Track] */}   
-          // Pass onRemove and isRemoval from the TrackList component to the Track component.  
+          en este caso un array de [Track] */}     
          return <Track key={track.id} 
                        track={track} 
                        onAdd={this.props.onAdd}
