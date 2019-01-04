@@ -3,6 +3,8 @@
 // This object will store the functionality needed to interact with the SPOTIFY API.
 const Spotify = {
   
+  token: {}
+
 };
 
 export default Spotify;
