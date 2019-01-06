@@ -2,42 +2,42 @@
 import React from 'react';
 import './SearchBar.css';
 
+// Abstract: una barra de búsqueda para que el usuario busque canciones
+// de acuerdo a un término. (por ej: por canción, artista o álbum)
 class SearchBar extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      term: ''
+    };
+
     // bind methods
     this.search = this.search.bind(this);
     this.handleTermChange = this.handleTermChange.bind(this);
   }
 
+  // task: manejar la información ingresada por el usuario en el
+  // placeholder 'Enter A Song Title'
+  handleTermChange(event) {
+    // le pasa a la propiedad 'term' el valor obtenido
+    this.setState({ term: event.target.value});
+  }
+
   // search method
   // task: realizar la búsqueda de acuerdo al término introducido
   search() {
-    /*
-    In SearchBar.js, create a method called search that passes the state of the term to this.props.onSearch.
-    */
+   this.props.onSearch(this.state.term)
   }
 
-  // handle term change
-  // task: manejar el término ingresado por el usuario en la barra de búsqueda
-  handleTermChange(event) {
-    /*
-    71.
-    In SearchBar.js create a method called handleTermChange with the following functionality:
-
-    Accepts an event argument
-    Sets the state of the search bar's term to the event target's value.
-    */
-  }
-
+  // render method
   render() {
     return (
       <div className="SearchBar">
         <input placeholder="Enter A Song, Album, or Artist" 
-                onChange={this.handleTermChange}
-               onSearch={this.props.search} />   
-        <a>SEARCH</a>
+               onChange={this.handleTermChange} />   
+        <a onSearch={this.props.search}>SEARCH</a>
       </div>
     );
   }

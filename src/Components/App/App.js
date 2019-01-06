@@ -2,6 +2,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Spotify from '../../util/Spotify';
+/*
+In App.js, import Spotify and update the .search() method with the Spotify.search() method.
+
+Update the state of searchResults with the value resolved from Spotify.search()'s promise.
+*/
 
 // import components
 import SearchBar from '../SearchBar/SearchBar';
@@ -17,32 +23,14 @@ class App extends React.Component {
     // establece el estado inicial del componente
     // un conjunto de tracks (por ahora ficticios)
     this.state = {
-      // search results representa una serie de tracks (ficticios)
-      // obtenidos mediante una búsqueda realizada por el usuario
-      searchResults : [
-        {
-          name: 'Jump',
-          artist: 'Madonna',
-          album: 'XXX',
-          id: '1'
-         },
-        {
-          name: 'Every Day',
-          artist: 'Madonna',
-          album: 'XXX',
-          id: '2'
-        },
-         {
-          name: 'Otro',
-          artist: 'Madonna',
-          album: 'XXX',
-          id: '3'
-        }
-      ],
-      // play list name
+      
+      // search results (obtenidos mediante la solicitud a la API de Spotify)
+      searchResults : Spotify.search,
+
+      // user play list name
       playListName: 'Mi Lista de reproducción',
 
-      // play list tracks
+      // user play list tracks
       playlistTracks: [
         {
           name: 'Pedro',
@@ -118,15 +106,10 @@ class App extends React.Component {
   */
   }
 
+  // task: realizar una búsqueda en Spotity de acuerdo al término ingresado
   search(term) {
     console.log(term);
-      /*
-  67- In App.js create a method called search with the following functionality:
-
-  Accepts a search term
-  Logs the term to the console
-  In a later assessment, we will hook this method up to the Spotify API.
-  */
+  
   }
 
 
