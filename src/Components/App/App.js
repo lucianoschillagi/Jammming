@@ -3,11 +3,6 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Spotify from '../../util/Spotify';
-/*
-In App.js, import Spotify and update the .search() method with the Spotify.search() method.
-
-Update the state of searchResults with the value resolved from Spotify.search()'s promise.
-*/
 
 // import components
 import SearchBar from '../SearchBar/SearchBar';
@@ -26,6 +21,12 @@ class App extends React.Component {
       
       // search results (obtenidos mediante la solicitud a la API de Spotify)
       searchResults : Spotify.search,
+
+      /*
+      In App.js, import Spotify and update the .search() method with the Spotify.search() method.
+
+      Update the state of searchResults with the value resolved from Spotify.search()'s promise.
+      */
 
       // user play list name
       playListName: 'Mi Lista de reproducción',
@@ -65,16 +66,24 @@ class App extends React.Component {
   // se quiere agregar ya está guardada en el play list.
   addTrack(track) {
 
+    /*
+    To break it down
+
+    - First look through your current playlist array. Make sure that the ID of the track you are about to add does not have the same ID of any tracks in the array. You don't  want duplicates.
+    - If that is good, use `setState` to add the track to your playlist array
+
+
+    Steve - Moderator [hace 1 día]
+    You want to create this function in App.js and call it `addTrack`
+
+    */
     // comprueba si la canción que se quiere agregar ya está guardada en el playlist
     if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
-      // entonces, si ya está guardada, no agregar nada 
       return;
     } else {
-      // pero si NO estaba guardada en el playlist, AGREGAR al playlist
-      // WARNING: incompleto, PEDIR AYUDA
-
-      // si no estaba guardada devolver ese track
-      return track
+      
+      this.setState.playlistTracks(track);
+      return;
     }
   }
    
@@ -105,16 +114,6 @@ class App extends React.Component {
   In a later step, you will pass the trackURIs array and playlistName to a method that will save the user's playlist to their account.
   */
   }
-
-  // task: realizar una búsqueda en Spotity de acuerdo al término ingresado
-  search(term) {
-    console.log(term);
-  
-  }
-
-
-
-
 
 
   // render method
