@@ -1,5 +1,8 @@
 /* SPOTIFY API - Networking */
 
+const clientID = 'c69500efaf69490a962ae5c955858a60';
+const redirectURI = 'http://localhost:3000/';
+
 // This object will store the functionality needed to interact with the SPOTIFY API.
 const Spotify = {
   
