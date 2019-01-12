@@ -1,4 +1,4 @@
-/* App Component */
+/* App Component (parent component) */
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -11,16 +11,31 @@ import Playlist from '../Playlist/Playlist';
 
 class App extends React.Component {
 
-  // este componente (App) hereda todas las propiedades
-  // de su super clase (React.Component)
   constructor(props) {
     super(props);
     // establece el estado inicial del componente
     // un conjunto de tracks (por ahora ficticios)
     this.state = {
-      
-      // search results (obtenidos mediante la solicitud a la API de Spotify)
-      searchResults : Spotify.search,
+      searchResults : [
+        {
+          name: 'Song_1',
+          artist: 'Artist_1',
+          album: 'Album_1',
+          id: '1'
+        },
+        {
+          name: 'Song_2',
+          artist: 'Artist_2',
+          album: 'Album_2',
+          id: '2'
+        },
+        {
+          name: 'Song_3',
+          artist: 'Artist_3',
+          album: 'Album_3',
+          id: '3'
+        },
+      ],
 
       /*
       In App.js, import Spotify and update the .search() method with the Spotify.search() method.
@@ -83,7 +98,6 @@ class App extends React.Component {
     } else {
       
       this.setState.playlistTracks(track);
-      return;
     }
   }
    

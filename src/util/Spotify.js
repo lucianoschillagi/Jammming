@@ -3,8 +3,6 @@
 const clientID = 'c69500efaf69490a962ae5c955858a60';
 const redirectURI = 'http://localhost:3000/';
 
-
-
 // This object will store the functionality needed to interact with the SPOTIFY API.
 const Spotify = {
 
@@ -34,10 +32,24 @@ const Spotify = {
     const headers = {}; // INCOMPLETO
     userID;
 
+    /*
+    Make a request that returns the user's Spotify username.
+    Convert the response to JSON and save the response id parameter to the user's ID variable.
+    */
+
+    fetch('https://api.spotify.com/v1/me', {headers: headers}).then(response => {
+      return response.json();
+    }).then(jsonResponse => {
+
+      /*
+      Make a request that returns the user's Spotify username.
+      Convert the response to JSON and save the response id parameter to the user's ID variable.
+      */
+     
+     userID = jsonResponse.id;
+    })
     
-
-
-  }
+  },
   
   // the access token
   token: {},
