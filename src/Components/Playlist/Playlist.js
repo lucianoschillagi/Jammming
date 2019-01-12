@@ -18,7 +18,7 @@ class Playlist extends Component {
 
   // task: manejar el cambio de nombre del playlist
   handleNameChange(event) {
-    // WARNING: pedir ayuda (59)
+      onNameChange(event.target.value)
   }
 
   render() {
@@ -30,7 +30,7 @@ class Playlist extends Component {
            onChange={this.handleNameChange} 
            onSave={this.props.savePlaylist}>
         {/* el nombre del playlist */}
-        <input value="New Playlist"/>
+        <input value="New Playlist" onChange={this.handleNameChange}/>
 
         {/* la lista de tracks */}
         {/* Pasa el track list dentro del play list y le agrega un método para remover tracks */}
