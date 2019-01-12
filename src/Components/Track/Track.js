@@ -1,6 +1,7 @@
-/* Track Component */
+/* Track Component (child of Track List) */
 import React from 'react';
 import './Track.css';
+import Playlist from '../Playlist/Playlist';
 
 class Track extends React.Component {
 
@@ -23,9 +24,8 @@ class Track extends React.Component {
   }
 
   // task: agregar un track al playlist cuando el usuario tapea el +
-  addTrack(track) {
-
-
+  addTrack() {
+      <Playlist onAdd={this.props.track}/>
   }
 
   // task: eliminar un track particular

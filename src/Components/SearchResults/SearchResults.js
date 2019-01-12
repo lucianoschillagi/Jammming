@@ -8,9 +8,18 @@ class SearchResults extends React.Component {
   render() {
     return (
       // pasa el estado del componente 'App' como una props al componente 'Search Results'
-      <div className="SearchResults" searchResults={this.props.searchResults} onAdd={this.props.addTrack}>
+      <div className="SearchResults" 
+           searchResults={this.props.searchResults} 
+           onAdd={this.props.addTrack} 
+           isRemoval={false}>
         <h2>Results</h2>
-        <TrackList tracks={this.props.searchResults} onAdd={this.props.onAdd}/>
+
+        {/* ↓ pass down */}
+        {/* 'Track List' es componente hijo de 'Search Results' */}
+        <TrackList tracks={this.props.searchResults} 
+                   onAdd={this.props.onAdd} 
+                   isRemoval={this.props.isRemoval}/>
+
       </div>
     );
   }
