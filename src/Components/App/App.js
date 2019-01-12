@@ -81,23 +81,14 @@ class App extends React.Component {
   // se quiere agregar ya está guardada en el play list.
   addTrack(track) {
 
-    /*
-    To break it down
-
-    - First look through your current playlist array. Make sure that the ID of the track you are about to add does not have the same ID of any tracks in the array. You don't  want duplicates.
-    - If that is good, use `setState` to add the track to your playlist array
-
-
-    Steve - Moderator [hace 1 día]
-    You want to create this function in App.js and call it `addTrack`
-
-    */
     // comprueba si la canción que se quiere agregar ya está guardada en el playlist
     if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+      // si ya está guardada, no guardar
       return;
     } else {
-      
-      this.setState.playlistTracks(track);
+      // si NO está guardada, guardar 
+      //(cambia el estado actual del componente al agregarle un nuevo objeto)
+      this.setState({playlistTracks:track});
     }
   }
    
