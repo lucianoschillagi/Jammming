@@ -25,7 +25,8 @@ class Playlist extends Component {
     return (
       <div className="Playlist" 
            onNameChange={this.props.updatePlaylistName}
-           onRemove={this.props.removeTrack} 
+           onRemove={this.props.removeTrack}
+           isRemoval={true}
            onChange={this.handleNameChange} 
            onSave={this.props.savePlaylist}>
         {/* el nombre del playlist */}
@@ -33,7 +34,9 @@ class Playlist extends Component {
 
         {/* la lista de tracks */}
         {/* Pasa el track list dentro del play list y le agrega un método para remover tracks */}
-        <TrackList tracks={this.props.playlistTracks} onRemove={this.props.removeTrack} isRemoval={true}/>
+        <TrackList tracks={this.props.playlistTracks} 
+                   onRemove={this.props.onRemove} 
+                   isRemoval={this.props.isRemoval}/>
 
         {/* el botón para guardar el play list actual */}
         <a className="Playlist-save" onClick={this.props.onSave}>SAVE TO SPOTIFY</a>

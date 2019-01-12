@@ -71,7 +71,7 @@ class App extends React.Component {
 
     // bind methods
     this.addTrack = this.addTrack.bind(this); 
-    this.removeTrack = this.addTrack.bind(this);
+    this.removeTrack = this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
     this.savePlaylist = this.savePlaylist.bind(this);
     this.search = this.search.bind(this);
@@ -96,17 +96,14 @@ class App extends React.Component {
   removeTrack(track) {
     // comprueba si la canción que se quiere eliminar ya está guardada en el playlist
     if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
-      // entonces, si ya está guardada, no agregar nada 
+      // entonces, si ya está guardada, eliminar. INCOMPLETO 
       return;
-    } else {
-      // WARNING: incompleto, PEDIR AYUDA
-      return track
-    }
+    } 
   }
 
-  // task: actualizar el nombre de la playlist
+  // task: actualizar el nombre del playlist
   updatePlaylistName(name) {
-    this.state.playListName = name;
+    this.setState = ({playListName: name});
   }
 
   // task: guardar el playlist  

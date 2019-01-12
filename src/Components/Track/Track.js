@@ -7,20 +7,16 @@ class Track extends React.Component {
 
   constructor(props) {
     super(props);
-
-    // bind methods
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
   }
 
   renderAction() {
-    /*if (isRemoval) {
-      // TODO: displays - anchor tag
+    if (isRemoval) {
       return <a>-</a>
     } else {
-      // TODO: displays + anchor tag
       return <a>+</a>
-    }*/
+    }
   }
 
   // task: agregar un track al playlist cuando el usuario tapea el +
@@ -30,7 +26,7 @@ class Track extends React.Component {
 
   // task: eliminar un track particular
   removeTrack() {
-
+      <Playlist onRemove={this.props.track}/>
   }
 
   render() {
