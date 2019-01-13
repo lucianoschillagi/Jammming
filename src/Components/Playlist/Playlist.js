@@ -40,7 +40,8 @@ class Playlist extends Component {
                    isRemoval={this.props.isRemoval}/>
 
         {/* el botón para guardar el play list actual */}
-        <a className="Playlist-save" onClick={this.props.onSave}>SAVE TO SPOTIFY</a>
+        <a className="Playlist-save" 
+           onClick={this.props.onSave}>SAVE TO SPOTIFY</a>
     </div>
     );
   }

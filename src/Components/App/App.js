@@ -37,12 +37,6 @@ class App extends React.Component {
         },
       ],
 
-      /*
-      In App.js, import Spotify and update the .search() method with the Spotify.search() method.
-
-      Update the state of searchResults with the value resolved from Spotify.search()'s promise.
-      */
-
       // user play list name
       playListName: 'Mi Lista de reproducción',
 
@@ -75,6 +69,12 @@ class App extends React.Component {
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
     this.savePlaylist = this.savePlaylist.bind(this);
     this.search = this.search.bind(this);
+  }
+
+  // task: buscar tracks de acuerdo al término introducido por el usuario
+  // en la barra de búsqueda
+  search(term) {
+    console.log(term);
   }
 
   // task: agregar una canción del Search Results al Play List. Comprobar si la canción que
