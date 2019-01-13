@@ -21,6 +21,7 @@ class Playlist extends Component {
       onNameChange(event.target.value)
   }
 
+  // dibujar en la pantalla: Playlist, input, TrackList, a
   render() {
     return (
       <div className="Playlist" 

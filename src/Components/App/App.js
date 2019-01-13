@@ -108,35 +108,30 @@ class App extends React.Component {
 
   // task: guardar el playlist  
   savePlaylist() {
-  /*
-  TODO:
-  In App.js create a method called savePlaylist with the following functionality:
+    // el array de tracks a guardar (por ahora un simulacro al agarrar los tracks
+    // de playlistTracks). Luego tomará un array de URIs provistos por Spotify
+    var tracksURIs = this.playlistTracks;
 
-  Generates an array of uri values called trackURIs from the playlistTracks property.
-  In a later step, you will pass the trackURIs array and playlistName to a method that will save the user's playlist to their account.
-  */
+    // TODO: tb pasar luego el nombre del playlist que se quiere guardar
   }
 
-
-  // render method
+  // dibujar en la pantalla: h1, SearchBar, SearchResults, PlayList.
   render() {
     return (
-      // start JSX
       <div>
         <h1>Ja<span class="highlight">mmm</span>ing</h1>
         <div className="App">
-          { /*  Add a SearchBar component  */}
+
           <div className="App-playlist">
-          { /*  Add a SearchResults component  */}
-          
-          { /*  Add a Playlist component  */}
-          <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}/>
+          <Playlist playlistName={this.state.playlistName} 
+                    playlistTracks={this.state.playlistTracks}/>
           </div>
         </div>
     </div>
-    // end JSX
     );
   }
 }
+
+
 
 export default App;

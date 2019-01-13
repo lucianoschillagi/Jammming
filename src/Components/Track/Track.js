@@ -29,6 +29,7 @@ class Track extends React.Component {
       <Playlist onRemove={this.props.track}/>
   }
 
+  // dibujar en la pantalla: Track, 
   render() {
     return (
       <div className="Track">

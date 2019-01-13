@@ -4,6 +4,8 @@ import './TrackList.css';
 import Track from '../Track/Track';
 
 class TrackList extends React.Component {
+
+  // dibujar en la pantalla: TrackList, [Track].
   render() {
     return (
       <div className="TrackList"

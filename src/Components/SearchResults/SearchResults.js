@@ -1,7 +1,6 @@
 /* Search Results Component (child of 'App') */
 import React from 'react';
 import './SearchResults.css';
-// import Track List
 import TrackList from '../TrackList/TrackList';
 
 class SearchResults extends React.Component {
@@ -19,7 +18,6 @@ class SearchResults extends React.Component {
         <TrackList tracks={this.props.searchResults} 
                    onAdd={this.props.onAdd} 
                    isRemoval={this.props.isRemoval}/>
-
       </div>
     );
   }

@@ -31,7 +31,7 @@ class SearchBar extends React.Component {
    this.props.onSearch(this.state.term)
   }
 
-  // render method
+  // dibujar en la pantalla:
   render() {
     return (
       <div className="SearchBar">
