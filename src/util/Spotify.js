@@ -11,17 +11,21 @@ const redirectURI = 'http://localhost:3000/';
 const Spotify = {
 
   // task: guardar el play list creado por el usuario en su cuenta de Spotify
-  saveUserPlaylist(playlistName, tracks) {
+  saveUserPlaylist(playlistName, urisTrack) {
   
   // WARNING: preguntar sobre este condicional
-    if (playlistName && tracks) {
+    if (playlistName && urisTrack) {
 
     } else {
       return;
     }
 
-    const accessToken = '00'; // INCOMPLETO
-    const headers = {}; // INCOMPLETO
+    // necesario para guardar el playlist del usuario:
+    // su token
+    const accessToken = userAccessToken;
+    // el header con el token para realizar la solicitud de guardado
+    const headers = { headers: {Authorization: `Bearer ${userAccessToken}`} };
+    // el identificador el usuario
     userID;
 
     fetch('https://api.spotify.com/v1/me', {headers: headers}).then(response => {

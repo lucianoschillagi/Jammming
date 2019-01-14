@@ -89,7 +89,7 @@ class App extends React.Component {
     this.setState = ({playListName: name});
   }
 
-  // task: guardar el playlist  
+  // task: guardar el playlist del usuario
   savePlaylist() {
     // el array de tracks a guardar (por ahora un simulacro al agarrar los tracks
     // de playlistTracks). Luego tomará un array de URIs provistos por Spotify
