@@ -3,6 +3,14 @@ import React from 'react';
 import './Track.css';
 import Playlist from '../Playlist/Playlist';
 
+/*
+Within Track.js. isRemoval should be passed as prop because we do not know the value of isRemoval as yet. Like so;
+
+  renderAction() {
+    if (this.props.isRemoval) {.........
+
+*/
+
 class Track extends React.Component {
 
   constructor(props) {
@@ -11,8 +19,9 @@ class Track extends React.Component {
     this.removeTrack = this.removeTrack.bind(this);
   }
 
+  
   renderAction() {
-    if (isRemoval) {
+    if (this.props.isRemoval) {
       return <a>-</a>
     } else {
       return <a>+</a>
