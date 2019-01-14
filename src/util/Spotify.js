@@ -1,6 +1,10 @@
 /* SPOTIFY API - Networking */
 
+// el token del usuario
+var userAccessToken = {};
+// el identificador el cliente (en este caso, yo)
 const clientID = 'c69500efaf69490a962ae5c955858a60';
+//
 const redirectURI = 'http://localhost:3000/';
 
 // This object will store the functionality needed to interact with the SPOTIFY API.
