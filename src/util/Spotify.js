@@ -59,29 +59,16 @@ const Spotify = {
       // convierte la respuesta en un JSON
       return response.json();
     }).then(jsonResponse => {
-      /*
-        87.
-        Convert the returned response to JSON.
-
-        Then, map the converted JSON to an array of tracks. If the JSON does not contain any tracks, return an empty array.
-
-        The mapped array should contain a list of track objects with the following properties:
-
-        ID — returned as track.id
-        Name — returned as track.name
-        Artist — returned as track.artists[0].name
-        Album — returned as track.album.name
-        URI — returned as track.uri
-      */
       if (jsonResponse.tracks) {
         return jsonResponse.tracks.map(track => ({
+          // devuelve un nuevo array de tracks
           // extrae los valores deseados:
           // id, name, artist, album & uri
           id: track.id,
           name: track.name,
           artist: track.artists[0].name,
           album: track.album.name,
-          uri: track.uri
+          uri: track.uri // donde está alojado el track
         }));
       }
     });

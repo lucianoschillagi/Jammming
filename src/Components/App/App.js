@@ -16,26 +16,7 @@ class App extends React.Component {
     // establece el estado inicial del componente
     // un conjunto de tracks (por ahora ficticios)
     this.state = {
-      searchResults : [
-        {
-          name: 'Song_1',
-          artist: 'Artist_1',
-          album: 'Album_1',
-          id: '1'
-        },
-        {
-          name: 'Song_2',
-          artist: 'Artist_2',
-          album: 'Album_2',
-          id: '2'
-        },
-        {
-          name: 'Song_3',
-          artist: 'Artist_3',
-          album: 'Album_3',
-          id: '3'
-        },
-      ],
+      searchResults : Spotify.search,
 
       // user play list name
       playListName: 'Mi Lista de reproducción',
@@ -73,7 +54,7 @@ class App extends React.Component {
 
   // task: buscar tracks de acuerdo al término introducido por el usuario
   // en la barra de búsqueda
-  search(term) {
+  search() {
     console.log(term);
   }
 
