@@ -60,6 +60,13 @@ class App extends React.Component {
     });
   }
 
+  // task: guardar el playlist del usuario
+  savePlaylist() {
+    Spotify.savePlaylist().then(playlistTracks => 
+      {this.setState({playlistTracks: playlistTracks});
+    });
+  }
+
   // ⚠️ : no sé si .addTrack y .removeTrack están bien implementados. CONSULTAR
   
   // task: agregar una canción del Search Results al Play List. Comprobar si la canción que
@@ -89,11 +96,6 @@ class App extends React.Component {
   // task: actualizar el nombre del playlist
   updatePlaylistName(name) {
     this.setState = ({playListName: name});
-  }
-
-  // task: guardar el playlist del usuario
-  savePlaylist() {
-    Spotify.savePlaylist();
   }
 
   // dibujar en la pantalla: h1, SearchBar, SearchResults, PlayList.

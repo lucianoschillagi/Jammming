@@ -10,10 +10,13 @@ const redirectURI = 'http://localhost:3000/';
 // This object will store the functionality needed to interact with the SPOTIFY API.
 const Spotify = {
 
-  // task: guardar el play list creado por el usuario en su cuenta de Spotify
+  // task: guardar el playlist creado por el usuario en su cuenta de Spotify
+  // argumentos que habrá que pasarle a la función:
+  // playlistName, el nombre del playlist
+  // urisTrack: las 'direcciones' de los tracks. [track URIs]
   savePlaylist(playlistName, urisTrack) {
   
-  // WARNING: preguntar sobre este condicional
+  // ⚠️ : preguntar sobre este condicional, no estoy del todo seguro (90)
     if (playlistName && urisTrack) {
 
     } else {
@@ -24,48 +27,55 @@ const Spotify = {
     // su token
     const accessToken = userAccessToken;
     // el header con el token para realizar la solicitud de guardado
+    // ⚠️ : implicit grant flow, corroborar si está bien (91) 
     const headers = { headers: {Authorization: `Bearer ${userAccessToken}`} };
     // el identificador el usuario
-    userID;
+    var userID;
+    // el identificador de la playlist
+    var playlistID;
 
-    // solicita el nombre del usuario para luego ponerlo en la variable 'userID'
-    fetch('https://api.spotify.com/v1/me', {headers: headers}).then(response => {
-      return response.json();
-    }).then(jsonResponse => {
-      // el nombre del usuario (userID)
-      id: userID;
-
-
-
-
-      // task: crear una nueva playlist, pasa el id del usuario en la solicitud a Spotify
-      // 1. Create a new playlist
-      fetch(`https://api.spotify.com/v1/users/${userID}/playlists`, 
-      {
-        // WARNING: REVISAR ESTO //////////////////////////////
-        headers: {Authorization: `Bearer ${userAccessToken}`} ,
-        contentType: 'application/json',
-        method: 'POST',
-        name: 'My Playlist'
-      })
-    })
+      // 🚀 1er solicitud a Spotify: (GET) Solicitar el ID actual del usuario.
+      fetch('https://api.spotify.com/v1/me', {headers: headers}).then(response => {
+        // convierte la respuesta en un JSON
+        return response.json();
+      }).then(jsonResponse => {
+      // guarda el ID del usuario obtenido en la respuesta
+      // en la variable 'userID'
+      userID: jsonResponse.id // 📀
 
 
-    
+        // 🚀 2da solicitud a Spotify: (POST) Crear una nueva playlist, 
+        // envía el id del usuario en la solicitud a Spotify
+        // espera el identificador del playlist en la respuesta (playlist ID)
+        fetch(`https://api.spotify.com/v1/users/${userID}/playlists`, 
+        {
+          // ⚠️ : REVISAR ESTO 
+          headers: {Authorization: `Bearer ${userAccessToken}`} ,
+          contentType: 'application/json',
+          method: 'POST',
+          name: playlistName
+        })
 
-    // 2. Add tracks to a play list (INCOMPLETO)
-    // POST https://api.spotify.com/v1/playlists/{playlist_id}/tracks
+        }).then(response => {
+          return response.json();
+        }).then(jsonResponse => {
+          // guarda el ID de la playlist
+          // en la variable 'playlistID'
+          playlistID: jsonResponse.id // 📀
 
 
-
-
-
-
-
-
-
-
-
+          // 🚀 3ra solicitud a Spotify: (POST) Escribir la playlist con el array de tracks, 
+          // envía el identificador el playlist recién creado 
+          // espera el identificador del playlist en la respuesta, OTRO NUEVO (playlist ID)
+          fetch(`https://api.spotify.com/v1/playlists/${playlistID}/tracks`, 
+          {
+            // ⚠️ : REVISAR ESTO 
+            headers: {Authorization: `Bearer ${userAccessToken}`} ,
+            contentType: 'application/json',
+            method: 'POST',
+            name: playlistName
+          })
+        })
   },
   
   // task: obtener el token de acceso del usuario a Spotify
