@@ -28,14 +28,13 @@ const Spotify = {
     // el identificador el usuario
     userID;
 
+    // solicita el nombre del usuario para luego ponerlo en la variable 'userID'
     fetch('https://api.spotify.com/v1/me', {headers: headers}).then(response => {
       return response.json();
     }).then(jsonResponse => {
-
-
-     userID = jsonResponse.id;
+      // el nombre del usuario (userID)
+      id: userID;
     })
-    
   },
   
   // task: obtener el token de acceso del usuario a Spotify
