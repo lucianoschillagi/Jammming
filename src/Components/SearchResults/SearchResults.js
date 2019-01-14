@@ -1,7 +1,7 @@
 /* Search Results Component (child of 'App') */
 import React from 'react';
 import './SearchResults.css';
-import TrackList from '../TrackList/TrackList';
+import TrackList from '../Tracklist/Tracklist';
 
 class SearchResults extends React.Component {
   render() {

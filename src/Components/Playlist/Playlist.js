@@ -1,8 +1,7 @@
 /* Playlist Component (child of 'App' component) */
 import React, { Component } from 'react';
 import './Playlist.css';
-// import TrackList component
-import TrackList from '../TrackList/TrackList';
+import TrackList from '../Tracklist/Tracklist';
 
 class Playlist extends Component {
 
