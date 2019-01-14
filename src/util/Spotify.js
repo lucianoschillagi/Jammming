@@ -11,7 +11,7 @@ const redirectURI = 'http://localhost:3000/';
 const Spotify = {
 
   // task: guardar el play list creado por el usuario en su cuenta de Spotify
-  saveUserPlaylist(playlistName, urisTrack) {
+  savePlaylist(playlistName, urisTrack) {
   
   // WARNING: preguntar sobre este condicional
     if (playlistName && urisTrack) {

@@ -51,15 +51,16 @@ class App extends React.Component {
     this.savePlaylist = this.savePlaylist.bind(this);
     this.search = this.search.bind(this);
   }
-
+ 
   // task: buscar tracks de acuerdo al término introducido por el usuario
   // en la barra de búsqueda
   search() {
-    Spotify.search().then(searchResults => {this.setState({searchResults: searchResults});
-  });
+    Spotify.search().then(searchResults => 
+      {this.setState({searchResults: searchResults});
+    });
   }
 
-  // NOTE: no sé si .addTrack y .removeTrack están bien implementados. CONSULTAR
+  // ⚠️ : no sé si .addTrack y .removeTrack están bien implementados. CONSULTAR
   
   // task: agregar una canción del Search Results al Play List. Comprobar si la canción que
   // se quiere agregar ya está guardada en el play list.
@@ -92,11 +93,7 @@ class App extends React.Component {
 
   // task: guardar el playlist del usuario
   savePlaylist() {
-    // el array de tracks a guardar (por ahora un simulacro al agarrar los tracks
-    // de playlistTracks). Luego tomará un array de URIs provistos por Spotify
-    var tracksURIs = this.playlistTracks;
-
-    // TODO: tb pasar luego el nombre del playlist que se quiere guardar
+    Spotify.savePlaylist();
   }
 
   // dibujar en la pantalla: h1, SearchBar, SearchResults, PlayList.
