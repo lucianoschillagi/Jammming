@@ -14,14 +14,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     // establece el estado inicial del componente
-    // un conjunto de tracks (por ahora ficticios)
     this.state = {
-      searchResults : Spotify.search,
+      // los resultados de la última búsqueda
+      searchResults : [{}],
 
-      // user play list name
-      playListName: 'Mi Lista de reproducción',
+      // el nombre del playlist del usuario
+      playlistName: 'Mi Lista de reproducción',
 
-      // user play list tracks
+      // los tracks de la playlist del usuario
       playlistTracks: [
         {
           name: 'Pedro',
@@ -55,7 +55,8 @@ class App extends React.Component {
   // task: buscar tracks de acuerdo al término introducido por el usuario
   // en la barra de búsqueda
   search() {
-    console.log(term);
+    Spotify.search().then(searchResults => {this.setState({searchResults: searchResults});
+  });
   }
 
   // NOTE: no sé si .addTrack y .removeTrack están bien implementados. CONSULTAR

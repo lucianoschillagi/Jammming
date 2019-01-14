@@ -34,7 +34,38 @@ const Spotify = {
     }).then(jsonResponse => {
       // el nombre del usuario (userID)
       id: userID;
+
+
+
+
+      // task: crear una nueva playlist, pasa el id del usuario en la solicitud a Spotify
+      // 1. Create a new playlist
+      fetch(`https://api.spotify.com/v1/users/${userID}/playlists`, 
+      {
+        // WARNING: REVISAR ESTO //////////////////////////////
+        headers: {Authorization: `Bearer ${userAccessToken}`} ,
+        contentType: 'application/json',
+        method: 'POST',
+        name: 'My Playlist'
+      })
     })
+
+
+    
+
+    // 2. Add tracks to a play list (INCOMPLETO)
+    // POST https://api.spotify.com/v1/playlists/{playlist_id}/tracks
+
+
+
+
+
+
+
+
+
+
+
   },
   
   // task: obtener el token de acceso del usuario a Spotify
@@ -50,6 +81,10 @@ const Spotify = {
     } 
   },
 
+
+
+
+
   // task: realizar una búsqueda de acuerdo al término ingresado por el usuario
   search(term) {
     return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
@@ -63,6 +98,8 @@ const Spotify = {
       return response.json();
     }).then(jsonResponse => {
       if (jsonResponse.tracks) {
+        // mapea la respuesta para obtener un nuevo array
+        // con los valores deseados: id, name, artist, album & uri
         return jsonResponse.tracks.map(track => ({
           // devuelve un nuevo array de tracks
           // extrae los valores deseados:
@@ -76,6 +113,11 @@ const Spotify = {
       }
     });
   }
+
+
+
+
+
 };
 
 export default Spotify;
