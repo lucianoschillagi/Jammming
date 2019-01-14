@@ -4,11 +4,6 @@ import './Playlist.css';
 // import TrackList component
 import TrackList from '../TrackList/TrackList';
 
-/*
-
-61- In the Playlist render method, pass .handleNameChange() to an onChange property.
-*/
-
 class Playlist extends Component {
 
   constructor(props) {
@@ -18,7 +13,7 @@ class Playlist extends Component {
 
   // task: manejar el cambio de nombre del playlist
   handleNameChange(event) {
-      onNameChange(event.target.value)
+      this.props.onNameChange(event.target.value)
   }
 
   // dibujar en la pantalla: Playlist, input, TrackList, a
