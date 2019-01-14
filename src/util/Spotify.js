@@ -12,12 +12,7 @@ const Spotify = {
 
   // task: guardar el play list creado por el usuario en su cuenta de Spotify
   saveUserPlaylist(playlistName, tracks) {
-  /*
-  Create a method in Spotify.js that accepts two arguments. The first argument is the name of the playlist. The second is an array of track URIs.
-
-  Inside the function, check if there are values saved to the method's two arguments. If not, return.
-  */
-
+  
   // WARNING: preguntar sobre este condicional
     if (playlistName && tracks) {
 
@@ -25,44 +20,24 @@ const Spotify = {
       return;
     }
 
-    /*
-    Create three default variables:
-    An access token variable, set to the current user's access token
-    A headers variable, set to an object with an Authorization parameter containing the user's access token in the implicit grant flow request format
-    An empty variable for the user's ID
-    */
-
     const accessToken = '00'; // INCOMPLETO
     const headers = {}; // INCOMPLETO
     userID;
-
-    /*
-    Make a request that returns the user's Spotify username.
-    Convert the response to JSON and save the response id parameter to the user's ID variable.
-    */
 
     fetch('https://api.spotify.com/v1/me', {headers: headers}).then(response => {
       return response.json();
     }).then(jsonResponse => {
 
-      /*
-      Make a request that returns the user's Spotify username.
-      Convert the response to JSON and save the response id parameter to the user's ID variable.
-      */
-     
+
      userID = jsonResponse.id;
     })
     
   },
   
-  // the access token
-  token: {},
-
-  // get access token
-  // task: obtener el token de acceso a la API
-  getAccessToken(token) {
-    if (token == true) {
-      return token
+  // task: obtener el token de acceso del usuario a Spotify
+  getAccessToken() {
+    if (userAccessToken == true) {
+      return userAccessToken
     } else {
       return fetch(`https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`);
     }
