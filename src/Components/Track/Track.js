@@ -28,13 +28,13 @@ class Track extends React.Component {
   }
 
   // task: agregar un track al playlist cuando el usuario tapea el +
-  addTrack() {
-      <Playlist onAdd={this.props.track}/>
+  addTrack(event) {
+    this.props.onAdd(this.props.track);
   }
 
-  // task: eliminar un track particular
-  removeTrack() {
-      <Playlist onRemove={this.props.track}/>
+  // task: eliminar un track particular de la playlist
+  removeTrack(event) {
+    this.props.onRemove(this.props.track);
   }
 
   // dibujar en la pantalla: Track, 

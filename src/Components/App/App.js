@@ -77,6 +77,8 @@ class App extends React.Component {
     console.log(term);
   }
 
+  // NOTE: no sé si .addTrack y .removeTrack están bien implementados. CONSULTAR
+  
   // task: agregar una canción del Search Results al Play List. Comprobar si la canción que
   // se quiere agregar ya está guardada en el play list.
   addTrack(track) {
