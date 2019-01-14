@@ -4,7 +4,7 @@
 var userAccessToken = {};
 // el identificador el cliente (en este caso, yo)
 const clientID = 'c69500efaf69490a962ae5c955858a60';
-//
+// la url de redirección (adonde debe ir el navegador, donde está alojada mi aplicación)
 const redirectURI = 'http://localhost:3000/';
 
 // This object will store the functionality needed to interact with the SPOTIFY API.
@@ -36,11 +36,15 @@ const Spotify = {
   
   // task: obtener el token de acceso del usuario a Spotify
   getAccessToken() {
+    
+    // 1er condición: el usuario ya tiene un token de acceso
     if (userAccessToken == true) {
-      return userAccessToken
+      return userAccessToken;
+
+    // 2da condición: el usuario NO tiene token de acceso, hay que solicitarlo
     } else {
       return fetch(`https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`);
-    }
+    } 
   },
 
   // task: realizar una búsqueda de acuerdo al término ingresado por el usuario
@@ -49,7 +53,7 @@ const Spotify = {
       headers: {
         // para interactuar con la API de Spotify es necesario enviarle mi token 
         // en el header de la solicitud
-        headers: {Authorization: `Bearer ${token}`}
+        headers: {Authorization: `Bearer ${userAccessToken}`}
       }
     }).then(response => {
       // convierte la respuesta en un JSON
