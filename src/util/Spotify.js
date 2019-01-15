@@ -1,7 +1,7 @@
 /* SPOTIFY API - Networking */
 
-// el token del usuario
-var userAccessToken;
+// una variable para almacenar el token del usuario
+var userAccessToken = '';
 // el identificador el cliente (en este caso, yo)
 const clientID = 'c69500efaf69490a962ae5c955858a60';
 // la url de redirección (adonde debe ir el navegador, donde está alojada mi aplicación)
@@ -9,6 +9,52 @@ const redirectURI = 'http://localhost:3000/';
 
 // This object will store the functionality needed to interact with the SPOTIFY API.
 const Spotify = {
+
+  // task: obtener el token de acceso del usuario a Spotify
+  getAccessToken() {
+    
+    // ⚠️ 1er condición: el usuario ya tiene un token de acceso
+    if (userAccessToken == true) {
+      return userAccessToken;
+
+    // 2da condición: el usuario NO tiene token de acceso, hay que solicitarlo
+    } else {
+      return fetch(`https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`);
+    } 
+
+    // 🙀 Use the guide to determine how to parse the URL and set values for your access token and expiration time.
+
+  },
+
+   // task: realizar una búsqueda de acuerdo al término ingresado por el usuario
+   search(term) {
+    return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
+        // para interactuar con la API de Spotify es necesario enviarle mi token 
+        // en el header de la solicitud
+        headers: {Authorization: `Bearer ${userAccessToken}`}
+      
+    }).then(response => {
+      // convierte la respuesta en un JSON
+      return response.json();
+    }).then(jsonResponse => {
+      if (jsonResponse.tracks) {
+        // mapea la respuesta para obtener un nuevo array
+        // con los valores deseados: id, name, artist, album & uri
+        return jsonResponse.tracks.items.map(track => ({
+          // devuelve un nuevo array de tracks
+          // extrae los valores deseados:
+          // id, name, artist, album & uri
+          id: track.id,
+          name: track.name,
+          artist: track.artists[0].name,
+          album: track.album.name,
+          uri: track.uri // donde está alojado el track
+        }));
+      } else {
+        return [];
+      }
+    });
+  }
 
   // task: guardar el playlist creado por el usuario en su cuenta de Spotify
   // argumentos que habrá que pasarle a la función:
@@ -77,48 +123,7 @@ const Spotify = {
         })
   },
   
-  // task: obtener el token de acceso del usuario a Spotify
-  getAccessToken() {
-    
-    // 1er condición: el usuario ya tiene un token de acceso
-    if (userAccessToken == true) {
-      return userAccessToken;
-
-    // 2da condición: el usuario NO tiene token de acceso, hay que solicitarlo
-    } else {
-      return fetch(`https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`);
-    } 
-  },
-
-  // task: realizar una búsqueda de acuerdo al término ingresado por el usuario
-  search(term) {
-    return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
-        // para interactuar con la API de Spotify es necesario enviarle mi token 
-        // en el header de la solicitud
-        headers: {Authorization: `Bearer ${userAccessToken}`}
-      
-    }).then(response => {
-      // convierte la respuesta en un JSON
-      return response.json();
-    }).then(jsonResponse => {
-      if (jsonResponse.tracks) {
-        // mapea la respuesta para obtener un nuevo array
-        // con los valores deseados: id, name, artist, album & uri
-        return jsonResponse.tracks.items.map(track => ({
-          // devuelve un nuevo array de tracks
-          // extrae los valores deseados:
-          // id, name, artist, album & uri
-          id: track.id,
-          name: track.name,
-          artist: track.artists[0].name,
-          album: track.album.name,
-          uri: track.uri // donde está alojado el track
-        }));
-      } else {
-        return [];
-      }
-    });
-  }
+ 
 };
 
 export default Spotify;
