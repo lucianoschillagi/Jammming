@@ -1,7 +1,7 @@
 /* SPOTIFY API - Networking */
 
 // el token del usuario
-var userAccessToken = {};
+var userAccessToken;
 // el identificador el cliente (en este caso, yo)
 const clientID = 'c69500efaf69490a962ae5c955858a60';
 // la url de redirección (adonde debe ir el navegador, donde está alojada mi aplicación)
@@ -15,7 +15,6 @@ const Spotify = {
   // playlistName, el nombre del playlist
   // urisTrack: las 'direcciones' de los tracks. [track URIs]
   savePlaylist(playlistName, urisTrack) {
-  
   // ⚠️ : preguntar sobre este condicional, no estoy del todo seguro (90)
     if (playlistName && urisTrack) {
 
@@ -34,7 +33,7 @@ const Spotify = {
     // el identificador de la playlist
     var playlistID;
 
-      // 🚀 1er solicitud a Spotify: (GET) Solicitar el ID actual del usuario.
+      // 🚀 1er solicitud a Spotify: (GET) Obtener el ID actual del usuario.
       fetch('https://api.spotify.com/v1/me', {headers: headers}).then(response => {
         // convierte la respuesta en un JSON
         return response.json();
@@ -91,18 +90,13 @@ const Spotify = {
     } 
   },
 
-
-
-
-
   // task: realizar una búsqueda de acuerdo al término ingresado por el usuario
   search(term) {
     return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
-      headers: {
         // para interactuar con la API de Spotify es necesario enviarle mi token 
         // en el header de la solicitud
         headers: {Authorization: `Bearer ${userAccessToken}`}
-      }
+      
     }).then(response => {
       // convierte la respuesta en un JSON
       return response.json();
@@ -110,7 +104,7 @@ const Spotify = {
       if (jsonResponse.tracks) {
         // mapea la respuesta para obtener un nuevo array
         // con los valores deseados: id, name, artist, album & uri
-        return jsonResponse.tracks.map(track => ({
+        return jsonResponse.tracks.items.map(track => ({
           // devuelve un nuevo array de tracks
           // extrae los valores deseados:
           // id, name, artist, album & uri
@@ -120,14 +114,11 @@ const Spotify = {
           album: track.album.name,
           uri: track.uri // donde está alojado el track
         }));
+      } else {
+        return [];
       }
     });
   }
-
-
-
-
-
 };
 
 export default Spotify;

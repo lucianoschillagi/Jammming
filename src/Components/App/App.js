@@ -16,32 +16,13 @@ class App extends React.Component {
     // establece el estado inicial del componente
     this.state = {
       // los resultados de la última búsqueda
-      searchResults : [{}],
+      searchResults:[],
 
       // el nombre del playlist del usuario
       playlistName: 'Mi Lista de reproducción',
 
       // los tracks de la playlist del usuario
-      playlistTracks: [
-        {
-          name: 'Pedro',
-          artist: 'Nick Drake',
-          album: 'XXX',
-          id: '1'
-         },
-        {
-          name: 'La cucaracha',
-          artist: 'Babasónicos',
-          album: 'XXX',
-          id: '2'
-        },
-         {
-          name: 'La maza',
-          artist: 'Silvio',
-          album: 'XXX',
-          id: '3'
-        }
-      ]
+      playlistTracks:[],
     } 
 
     // bind methods
