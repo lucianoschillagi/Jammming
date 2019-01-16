@@ -12,18 +12,23 @@ const Spotify = {
 
   // task: obtener el token de acceso del usuario a Spotify
   getAccessToken() {
-    
-    // ⚠️ 1er condición: el usuario ya tiene un token de acceso
-    if (userAccessToken == true) {
-      return userAccessToken;
-
-    // 2da condición: el usuario NO tiene token de acceso, hay que solicitarlo
-    } else {
-      return fetch(`https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`);
-    } 
-
-    // 🙀 Use the guide to determine how to parse the URL and set values for your access token and expiration time.
-
+    if(accessToken)
+      return accessToken;
+    else if(window.location.href.match(/access_token=([^&]*)/) && window.location.href.match(/expires_in=([^&]*)/))
+    {
+      accessToken = window.location.href.match(/access_token=([^&]*)/)[1];
+      expiresIn = window.location.href.match(/expires_in=([^&]*)/)[1];
+  
+      window.setTimeout(() => accessToken = '', expiresIn*1000);
+      window.history.pushState('Access Token', null, '/');
+  
+      return accessToken;
+    }
+    else
+    {
+      let url = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
+      window.location = url;
+    }
   },
 
    // task: realizar una búsqueda de acuerdo al término ingresado por el usuario
